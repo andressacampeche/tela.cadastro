@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Formulários</title>
+    <style>
+        h1 {
+            font-family: Courier New, Courier, monospace;
+            margin-left: 580px;
+        }
+        #nome, #sobrenome, #email, #sexo, #regiao, #opcoes, #feedback{
+            margin-top: 5px;
+            margin-bottom: 15px;
+            width: 250px;
+            height: 30px;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        #titlenome{
+            word-spacing: 230px;
+        }
+        #conteiner{
+            width: 580px;
+            margin-left: 430px;
+            border: solid 3px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Vamos aprender a fazer formulários -->
+    <div>
+        <h1>Tela de Cadastro</h1>
+    </div>
+
+    <!-- Abrindo a TAG de formulário-->
+    <!-- Vale lembrar que cada campo tem o seu próprio "div" -->
+    <form>
+        <!-- Usa-se "fieldset" para agrupar campos do formulário em um só -->
+        <fieldset id="conteiner">
+            <div>
+                <label id="titlenome">Nome Sobrenome</label><br /> <!-- "Lable" escreve o "título" do campo -->
+                <!-- O "input" serve para dar entrada nos valores -->
+                <!-- Para "Nome" iremos criar um capo do tipo "text" -->
+                <input type="text" name="nome" id="nome" placeholder="Digite o seu nome">
+                <!-- O "placeholder" serve para escrever uma mensagem DENTRO do campo -->
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite o seu sobrenome">
+            </div>
+
+            <div>
+                <label>Email</label><br />
+                <!-- Campo do tipo "email" -->
+                <input type="email" name="email" id="email" placeholder="Digite o seu e-mail">
+            </div>
+
+            <div>
+                <!-- Criando um campo "radio", ou seja, onde você seleciona apenas
+         apenas UMA opção -->
+                <label>Sexo</label><br />
+                <label  id="sexo">
+                    <!-- Para agrupar os botões "radio", eles precisam ter o mesmo nome, mas cada
+             um terá o seu prórpio valor -->
+                    <input type="radio" name="sexo" value="fem">Feminino
+                    <input type="radio" name="sexo" value="masc">Masculino
+                </label>
+            </div>
+            <div>
+                <!-- Criando uma caixa de seleção -->
+                <br /><label>Região</label>
+                <!-- A TAG para criar a caixa de seleção é o <select>, e para as suas seleções, <option> -->
+                <select id="regiao">
+                    <!-- A primeira opção será uma NÃO SELECIONÁVEL, um "default",
+             definimos isso por "selected disabled" e deixamos o seu valor vazio-->
+                    <option selected disabled value="">SELECIONE</option>
+                    <option>Norte</option>
+                    <option>Nordeste</option>
+                    <option>Sul</option>
+                    <option>Sudeste</option>
+                    <option>Centro-Oeste</option>
+                </select>
+            </div>
+            <div>
+                <!-- Criando um campo "checkbox", aqui, diferente do "radio", podemos marcar quantas
+         opções desejarmos -->
+                <label>Selecione quantas opções desejar</label>
+                <label id="opcoes">
+                    <p><input type="checkbox" id="op1" name="op1" value="atualizacao">Desejo receber atualizações por e-mail<br />
+                    <input type="checkbox" id="op2" name="op2" value="noticia">Desejo receber notícias por e-mail<br />
+                    <input type="checkbox" id="op3" name="op3" value="login">Desejo manter meu login salvo
+                </label>
+            </div>
+            <div>
+                <!-- Criando um campo de área de texto -->
+                <label>Deixe-nos um feedback</label><br />
+                <!-- Usamos "row" e "cols" para definir as linhas e colunas que ficarão visíveis no site -->
+                <textarea row="6" cols="25" id="feedback" name="feedback" style="resize: none;"></textarea><br />
+                
+            </div>
+                <!-- Criando o Botão de "Enviar" -->
+                <button type="submit">Enviar</button>
+                <!-- Criando o Botão de "Limpar campos" -->
+                <button type="reset">Limpar</button>
+            <div>
+
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
